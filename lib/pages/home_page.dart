@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+import '../constants.dart';
+import '../helpers.dart';
 import '../widgets/primary_button.dart';
 import '../widgets/vertical_image_and_title.dart';
 
@@ -62,25 +65,22 @@ class HomePage extends StatelessWidget {
             crossAxisSpacing: 12,
             padding: EdgeInsets.zero,
             physics: const NeverScrollableScrollPhysics(),
-            childAspectRatio: 2 / 1.6,
             shrinkWrap: true,
-            children: const <Widget>[
-              VerticalImageAndTitle(imageUrl: '', title: 'Penggaris Besi'),
-              VerticalImageAndTitle(imageUrl: '', title: 'Spidol Snowman'),
-              VerticalImageAndTitle(
-                  imageUrl: '', title: 'Stiker Pola Liku-liku'),
-              VerticalImageAndTitle(
-                  imageUrl: '', title: 'Sarung Tangan Medis Karet'),
-              VerticalImageAndTitle(imageUrl: '', title: 'Kain Lap Kacamata'),
-              VerticalImageAndTitle(imageUrl: '', title: 'Klip Plastik'),
-            ],
+            children: List.generate(
+              6,
+              (index) => VerticalImageAndTitle(
+                title: tools[index].title,
+                imageUrl: getImageItemPath(tools[index]),
+              ),
+            ),
           ),
           const SizedBox(height: 12),
           Align(
             alignment: Alignment.centerLeft,
             child: UnconstrainedBox(
               child: PrimaryButton(
-                onPressed: () => Navigator.pushNamed(context, '/tools'),
+                onPressed: () => Navigator.pushNamed(context, '/tools',
+                    arguments: {'title': 'Alat Eksperimen', 'items': tools}),
                 text: 'Selengkapnya',
               ),
             ),
@@ -96,25 +96,25 @@ class HomePage extends StatelessWidget {
             crossAxisSpacing: 12,
             padding: EdgeInsets.zero,
             physics: const NeverScrollableScrollPhysics(),
-            childAspectRatio: 2 / 1.6,
             shrinkWrap: true,
-            children: const <Widget>[
-              VerticalImageAndTitle(imageUrl: '', title: 'Penggaris Besi'),
-              VerticalImageAndTitle(imageUrl: '', title: 'Spidol Snowman'),
-              VerticalImageAndTitle(
-                  imageUrl: '', title: 'Stiker Pola Liku-liku'),
-              VerticalImageAndTitle(
-                  imageUrl: '', title: 'Sarung Tangan Medis Karet'),
-              VerticalImageAndTitle(imageUrl: '', title: 'Kain Lap Kacamata'),
-              VerticalImageAndTitle(imageUrl: '', title: 'Klip Plastik'),
-            ],
+            children: List.generate(
+              5,
+              (index) => VerticalImageAndTitle(
+                title: ingredients[index].title,
+                imageUrl: getImageItemPath(ingredients[index]),
+              ),
+            ),
           ),
           const SizedBox(height: 12),
           Align(
             alignment: Alignment.centerLeft,
             child: UnconstrainedBox(
               child: PrimaryButton(
-                onPressed: () {},
+                onPressed: () => Navigator.pushNamed(context, '/tools',
+                    arguments: {
+                      'title': 'Bahan Eksperimen',
+                      'items': ingredients
+                    }),
                 text: 'Selengkapnya',
               ),
             ),
