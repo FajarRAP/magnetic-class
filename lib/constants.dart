@@ -1,273 +1,296 @@
-class Tools {
+const url = 'assets/images/';
+const ingredientsUrl = '${url}ingredients/';
+const toolsUrl = '${url}tools/';
+
+class Item {
   final String title;
   final String imageUrl;
   final String description;
 
-  const Tools({
+  const Item({
     required this.title,
     required this.imageUrl,
     required this.description,
   });
 }
 
-const tools = <Tools>[
-  Tools(
-    title: 'Penggaris besi',
-    imageUrl: 'assets/images/tools/',
-    description: 'Untuk mengukur ukuran substrat',
+class Tool extends Item {
+  const Tool({
+    required super.title,
+    required super.imageUrl,
+    required super.description,
+  });
+}
+
+class Ingredient extends Item {
+  const Ingredient({
+    required super.title,
+    required super.imageUrl,
+    required super.description,
+  });
+}
+
+const ingredients = <Ingredient>[
+  Ingredient(
+    title: 'Ferri chlorit',
+    imageUrl: ingredientsUrl,
+    description: 'Laruran untuk mengkorosikan pelat tembaga',
   ),
-  Tools(
-    title: 'Spidol snowman',
-    imageUrl: 'assets/images/tools/',
-    description: 'Menggambar substrat pada pelat tembaga',
+  Ingredient(
+    title: 'Plat Nikel',
+    imageUrl: ingredientsUrl,
+    description: 'Sebagai anoda',
   ),
-  Tools(
+  Ingredient(
+    title: 'Plat besi',
+    imageUrl: ingredientsUrl,
+    description: 'Sebagai anoda',
+  ),
+  Ingredient(
+    title: 'Larutan elektrolit (NiCl2 60 gr, NiSO4 260 gr, H3BO3 40 gr)',
+    imageUrl: ingredientsUrl,
+    description: 'Membuat larutan',
+  ),
+  Ingredient(
     title: 'Stiker pola liku-liku',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: ingredientsUrl,
     description: 'Membuat pola pada pelat tembaga',
   ),
-  Tools(
+];
+
+const tools = <Tool>[
+  Tool(
+    title: 'Penggaris besi',
+    imageUrl: toolsUrl,
+    description: 'Untuk mengukur ukuran substrat',
+  ),
+  Tool(
+    title: 'Spidol snowman',
+    imageUrl: toolsUrl,
+    description: 'Menggambar substrat pada pelat tembaga',
+  ),
+  Tool(
     title: 'Sarung tangan medis karet',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description:
         'Melindungi tangan agar tidak terkena bubuk ferri chlorite yang dapat menyebabkan iritasi',
   ),
-  Tools(
+  Tool(
     title: 'Kain Lap Kacamata',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description:
         'Karena halus maka dipilih untuk menggosokkan autosol dan pasta gigi ke pelat tembaga (Cu)',
   ),
-  Tools(
+  Tool(
     title: 'Klip plastik',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Untuk menyimpan substrat',
   ),
-  Tools(
+  Tool(
     title: 'Loyang plastik',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Wadah untuk mengkorosikan tembaga',
   ),
-  Tools(
+  Tool(
     title: 'Gelas kimia 100 ml',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Untuk mengukur volume larutan yang digunakan',
   ),
-  Tools(
+  Tool(
     title: 'Gerinda kecil',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Untuk memotong pelat tembaga',
   ),
-  Tools(
+  Tool(
     title: 'Gunting besar',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Untuk memotong pelat Nikel dan Besi',
   ),
-  Tools(
+  Tool(
     title: 'Tisu Paseo',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Untuk mengeringkan substrat',
   ),
-  Tools(
+  Tool(
     title: 'Pinset',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Alat bantu memegang substrat agar tetap steril',
   ),
-  Tools(
+  Tool(
     title: 'Ultrasonic cleaner',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description:
         'Untuk membersihkan substrat dengan cairan alkohol dan aquadest',
   ),
-  Tools(
+  Tool(
     title: 'Hair dryer',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description:
         'Mengeringkan substrat setelah dibersihkan dengan ultrasonic cleaner',
   ),
-  Tools(
+  Tool(
     title: 'Neraca ohauss',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Menimbang substrat',
   ),
-  Tools(
+  Tool(
     title: 'Sikat gigi dengan bulu halus',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Untuk membersihkan substrat',
   ),
-  Tools(
+  Tool(
     title: 'Kertas label',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Untuk penamaan substrat',
   ),
-  Tools(
+  Tool(
     title: 'Sunlight',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Memudahkan pembersihan larutan ferri chlorit pada subtrat',
   ),
-  Tools(
+  Tool(
     title: 'Autosol',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Bahan pembersih substrat agar mengkilap',
   ),
-  Tools(
+  Tool(
     title: 'Pasta gigi',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Membersihkan substrat',
   ),
-  Tools(
-    title: 'Ferri chlorit',
-    imageUrl: 'assets/images/tools/',
-    description: 'Laruran untuk mengkorosikan pelat tembaga',
-  ),
-  Tools(
+  Tool(
     title: 'Cairan aseton',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Mempermudah melepaskan stiker pada pelat tembaga',
   ),
-  Tools(
+  Tool(
     title: 'Aquadest',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Membilas aseton',
   ),
-  Tools(
+  Tool(
     title: 'Air',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Membuat larutan ferri chlorit',
   ),
-  Tools(
+  Tool(
     title: 'Alkohol',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Membersihkan substrat setelah aquades',
   ),
-  Tools(
+  Tool(
     title: 'Laptop yang sudah terinstall software Logger Pro',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Untuk mengambil data arus',
   ),
-  Tools(
+  Tool(
     title: 'Labquest',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Mengukur arus yang disambungkan ke laptop',
   ),
-  Tools(
+  Tool(
     title: 'Rangkaian alat elektroplating berbantuan medan magnet sejajar',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Alat elektroplating berbantuan medan magnet sejajar',
   ),
-  Tools(
+  Tool(
     title: 'Gelas kimia 1000 ml',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Wadah larutan',
   ),
-  Tools(
+  Tool(
     title: 'Ampere meter',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Mengukur arus saat proses elektroplating',
   ),
-  Tools(
+  Tool(
     title: 'Termometer',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Mengukur suhu larutan',
   ),
-  Tools(
+  Tool(
     title: 'Hot plate atau kompor listrik',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Memanaskan larutan',
   ),
-  Tools(
+  Tool(
     title: 'Pinset',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Alat bantu memegang sampel',
   ),
-  Tools(
+  Tool(
     title: 'Hair dryer',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Mengeringkan sampel',
   ),
-  Tools(
+  Tool(
     title: 'Tisu',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Mengeringkan sampel',
   ),
-  Tools(
+  Tool(
     title: 'Sendok plastik',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Mengambil bubuk ferri chlorit dan bahan-bahan larutan',
   ),
-  Tools(
+  Tool(
     title: 'Plastik klip',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Menyimpan sampel',
   ),
-  Tools(
+  Tool(
     title: 'Kertas label',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Penamaan sampel',
   ),
-  Tools(
+  Tool(
     title: 'Timer smartphone',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Mengukur waktu proses elektroplating',
   ),
-  Tools(
+  Tool(
     title: 'Neraca ohauss',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Menimbang bahan-bahan pembuat larutan dan sampel',
   ),
-  Tools(
-    title: 'Larutan elektrolit (NiCl2 60 gr, NiSO4 260 gr, H3BO3 40 gr)',
-    imageUrl: 'assets/images/tools/',
-    description: 'Membuat larutan',
-  ),
-  Tools(
+  Tool(
     title: 'Aquades',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Membuat larutan',
   ),
-  Tools(
-    title: 'Plat Nikel',
-    imageUrl: 'assets/images/tools/',
-    description: 'Sebagai anoda',
-  ),
-  Tools(
-    title: 'Plat besi',
-    imageUrl: 'assets/images/tools/',
-    description: 'Sebagai anoda',
-  ),
-  Tools(
+  Tool(
     title: 'Substrat',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Sebagai katoda',
   ),
-  Tools(
+  Tool(
     title: 'Four Point Probe (FPP)',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Mengukur resistivitas lapisan Cu/NiFe',
   ),
-  Tools(
+  Tool(
     title: 'Nitrogen cair',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Sumber suhu rendah',
   ),
-  Tools(
+  Tool(
     title: 'Voltage probe',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Mengukur tegangan output',
   ),
-  Tools(
+  Tool(
     title: 'Termokopel',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Pendeteksi sensor suhu',
   ),
-  Tools(
+  Tool(
     title: 'Transduser',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Pengubah data analog ke digital',
   ),
-  Tools(
+  Tool(
     title: 'Lapisan tipis Cu/NiFe',
-    imageUrl: 'assets/images/tools/',
+    imageUrl: toolsUrl,
     description: 'Sampel yang akan diuji',
   ),
 ];
