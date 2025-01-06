@@ -15,9 +15,7 @@ class HomePage extends StatelessWidget {
     final colorScheme = theme.colorScheme;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Magnetic Class'),
-      ),
+      appBar: AppBar(title: const Text('Magnetic Class')),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
@@ -55,6 +53,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 50),
+          // Experiment Tools
           Text(
             'Alat Eksperimen',
             style: textTheme.titleSmall,
@@ -79,13 +78,20 @@ class HomePage extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: UnconstrainedBox(
               child: PrimaryButton(
-                onPressed: () => Navigator.pushNamed(context, '/tools',
-                    arguments: {'title': 'Alat Eksperimen', 'items': tools}),
+                onPressed: () {
+                  final args = <String, dynamic>{
+                    'title': 'Alat Eksperimen',
+                    'items': tools
+                  };
+                  Navigator.pushNamed(context, experimentItemsRoute,
+                      arguments: args);
+                },
                 text: 'Selengkapnya',
               ),
             ),
           ),
           const SizedBox(height: 50),
+          // Experiment Ingredients
           Text(
             'Bahan Eksperimen',
             style: textTheme.titleSmall,
@@ -110,58 +116,81 @@ class HomePage extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: UnconstrainedBox(
               child: PrimaryButton(
-                onPressed: () => Navigator.pushNamed(context, '/tools',
-                    arguments: {
-                      'title': 'Bahan Eksperimen',
-                      'items': ingredients
-                    }),
+                onPressed: () {
+                  final args = {
+                    'title': 'Bahan Eksperimen',
+                    'items': ingredients
+                  };
+                  Navigator.pushNamed(context, experimentItemsRoute,
+                      arguments: args);
+                },
                 text: 'Selengkapnya',
               ),
             ),
           ),
           const SizedBox(height: 50),
+          // Experiment Steps
           Text(
             'Langkah Eksperimen',
             style: textTheme.titleSmall,
           ),
           const SizedBox(height: 12),
-          UnconstrainedBox(
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: Colors.grey.shade300,
-              ),
-              width: 250,
-              child: Column(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(12),
+          SizedBox(
+            height: 200,
+            child: ListView.separated(
+              itemBuilder: (context, index) => UnconstrainedBox(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: const [
+                      BoxShadow(
+                        blurRadius: 4,
+                        color: Color(0xFFBDBDBD),
+                        offset: Offset(0, 2),
                       ),
-                      color: colorScheme.primaryContainer,
-                    ),
-                    padding: const EdgeInsets.all(8),
-                    width: double.infinity,
-                    child: Text(
-                      'Sub Langkah Eksperimen',
-                      style: textTheme.labelSmall?.copyWith(
-                        fontWeight: FontWeight.w600,
+                    ],
+                    color: Colors.grey.shade300,
+                  ),
+                  width: 250,
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: const BorderRadius.vertical(
+                            top: Radius.circular(12),
+                          ),
+                          color: colorScheme.primaryContainer,
+                        ),
+                        padding: const EdgeInsets.all(8),
+                        width: double.infinity,
+                        child: Text(
+                          steps[index].title,
+                          style: textTheme.labelSmall?.copyWith(
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
                       ),
-                    ),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          image: DecorationImage(
+                            image: AssetImage(steps[index].imageUrl),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        margin: const EdgeInsets.all(16),
+                        height: 120,
+                        width: double.infinity,
+                      ),
+                    ],
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.grey.shade400,
-                    ),
-                    margin: const EdgeInsets.all(16),
-                    height: 120,
-                    width: double.infinity,
-                    child: const Icon(Icons.play_circle_rounded, size: 36),
-                  ),
-                ],
+                ),
               ),
+              separatorBuilder: (context, index) => const SizedBox(width: 16),
+              itemCount: 3,
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
             ),
           ),
           const SizedBox(height: 12),
@@ -169,12 +198,14 @@ class HomePage extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: UnconstrainedBox(
               child: PrimaryButton(
-                onPressed: () {},
+                onPressed: () =>
+                    Navigator.pushNamed(context, experimentStepsRoute),
                 text: 'Selengkapnya',
               ),
             ),
           ),
           const SizedBox(height: 50),
+          // Developer Profile
           Text(
             'Profile Pengembang',
             style: textTheme.titleSmall,
