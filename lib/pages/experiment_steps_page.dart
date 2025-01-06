@@ -16,6 +16,7 @@ class ExperimentStepsPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          const SizedBox(height: 16),
           Text(
             'Langkah Penyiapan Substrat',
             style: textTheme.titleSmall,
