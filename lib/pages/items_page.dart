@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:magnetic_class/widgets/reversed_horizontal_image_and_title.dart';
 
 import '../constants.dart';
 import '../helpers.dart';
@@ -19,12 +20,16 @@ class ItemsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
       body: ListView.separated(
-        itemBuilder: (context, index) => HorizontalImageAndTitle(
-          description: items[index].description,
-          title: items[index].title,
-          imageUrl: getImageItemPath(items[index]),
-        ),
-        separatorBuilder: (context, index) => const SizedBox(height: 12),
+        itemBuilder: (context, index) => index.isEven
+            ? HorizontalImageAndTitle(
+                description: items[index].description,
+                title: items[index].title,
+                imageUrl: getImageItemPath(items[index]))
+            : ReversedHorizontalImageAndTitle(
+                description: items[index].description,
+                title: items[index].title,
+                imageUrl: getImageItemPath(items[index])),
+        separatorBuilder: (context, index) => const SizedBox(height: 20),
         itemCount: items.length,
         padding: const EdgeInsets.all(16),
       ),

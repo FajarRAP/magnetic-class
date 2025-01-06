@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HorizontalImageAndTitle extends StatelessWidget {
-  const HorizontalImageAndTitle({
+class ReversedHorizontalImageAndTitle extends StatelessWidget {
+  const ReversedHorizontalImageAndTitle({
     super.key,
     required this.title,
     required this.description,
@@ -21,6 +21,25 @@ class HorizontalImageAndTitle extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
+          flex: 2,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                title,
+                style: textTheme.titleSmall,
+              ),
+              const SizedBox(height: 12),
+              Text(
+                description,
+                style: textTheme.bodySmall,
+                textAlign: TextAlign.end,
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
@@ -39,24 +58,6 @@ class HorizontalImageAndTitle extends StatelessWidget {
             ),
             height: 100,
             width: 100,
-          ),
-        ),
-        const SizedBox(width: 12),
-        Expanded(
-          flex: 2,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: textTheme.titleSmall,
-              ),
-              const SizedBox(height: 12),
-              Text(
-                description,
-                style: textTheme.bodySmall,
-              ),
-            ],
           ),
         ),
       ],
