@@ -5,6 +5,11 @@ final theme = ThemeData(
     centerTitle: true,
     elevation: 1.5,
     shadowColor: Colors.grey,
+    titleTextStyle: TextStyle(
+      color: Colors.black,
+      fontSize: 20,
+      fontWeight: FontWeight.w600,
+    ),
   ),
   colorScheme: ColorScheme.fromSeed(
     seedColor: const Color(0xFF1B61A1),
