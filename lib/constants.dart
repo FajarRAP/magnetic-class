@@ -1,6 +1,14 @@
 const url = 'assets/images/';
 const ingredientsUrl = '${url}ingredients/';
 const toolsUrl = '${url}tools/';
+const stepsUrl = '${url}steps/';
+const substrateUrl = '${stepsUrl}substrate/';
+const electroPlatingUrl = '${stepsUrl}electroplating/';
+const characterizationUrl = '${stepsUrl}characterization/';
+
+const homeRoute = '/';
+const experimentItemsRoute = '${homeRoute}experiment-items';
+const experimentStepsRoute = '${homeRoute}experiment-steps';
 
 class Item {
   final String title;
@@ -28,6 +36,16 @@ class Ingredient extends Item {
     required super.imageUrl,
     required super.description,
   });
+}
+
+class StepParams {
+  const StepParams({
+    required this.title,
+    required this.imageUrl,
+  });
+
+  final String title;
+  final String imageUrl;
 }
 
 const ingredients = <Ingredient>[
@@ -293,4 +311,39 @@ const tools = <Tool>[
     imageUrl: toolsUrl,
     description: 'Sampel yang akan diuji',
   ),
+];
+
+const steps = <StepParams>[
+  StepParams(title: 'Penyiapan Substrat', imageUrl: '${substrateUrl}1.png'),
+  StepParams(title: 'Elektroplating', imageUrl: '${electroPlatingUrl}1.png'),
+  StepParams(title: 'Karakterisasi', imageUrl: '${characterizationUrl}1.jpg'),
+];
+
+const substrateDescriptions = <String>[
+  'Membuat ukuran (7 x 1) cm untuk tiap substrat pada tembaga dengan bolpoint dan penggaris',
+  'Memotong pelat tembaga yang telah diukur dengan gerinda',
+  'Menyiapkan pelat besi dengan memotong nya menggunakan gunting sesuai kebutuhan',
+  'Menyiapkan pelat nikel dengan memotong nya menggunakan gunting sesuai kebutuhan',
+  'Menempelken stiker pada pelat tembaga. Lalu tunggu sekitar 2 menit hingga stiker benar benar tertempel pada pelat tembaga.',
+  'Melarutkan bubuk ferri chlorit dengan air pada baki untuk mengkorosikan tembaga. Lalu goyang – goyangkan baki untuk membantu mempercepat mengkorosikan tembaga',
+  'Mencuci substrat dengan sunlight dan menggosok sampel secara halus menggunakan sikat untuk membersihkan sisa – sisa larutan ferri chlorit.',
+  'Membilas substrat pada air mengalir',
+  'Melepas stiker dengan dilarutkan dalam larutan aceton selama 5 menit',
+  'Menggosokkan autosol pada substrat, pelat nikel dan besi dengan tisu/kain halus agar bersih dan mengkilap. Gosok substrat dengan searah menggunakan tisu/kain halus.',
+  'Setelah mengkilap, bersihkan kembali substrat dengan pepsodent dan gosok secara halus untuk hasil substrat yang lebih bersih dan mengkilap',
+  'Membilas substrat, pelat nikel dan besi dengan sunlight dan air mengalir dengan menggosok secara halus menggunakan sikat untuk membersihkan sisa-sisa autosol dan pepdosent',
+  'Untuk menyeterilkan substrat, maka substrat disterilkan dengan cairan aquades dan dilanjutkan menyeterilkan substrat 3 menit dengan cairan alkohol selama 3 menit menggunakan ultrasonik cleaner',
+  'Mengeringkan subtrat dengan hair dryer',
+  'Melakukan penimbangan massa substrat dengan neraca Ohauss secara berulang dan mencatat sebagai data massa substrat sebelum plating',
+  'Menyimpan subtrat ke dalam plastik klip agar tidak korosi. Setiap plastik klip diberi penamaan substrat',
+];
+
+const electroplatingDescriptions = <String>[
+  'Memanaskan larutan elektrolit hingga mencapai 60 ˚C dengan kompor listrik',
+  'Menempatkan pelat nikel dan besi pada anoda sedangkan substrat (tembaga) pada anoda pada alat plating',
+  'Menentukan jarak elektroda yaitu 4 cm',
+  'Memplating substrat dalam larutan elektrolit selama 4 menit dan dengan tegangan 4,5 volt',
+  'Membilas sampel dengan alkohol dan aquades dengan ultrasonic cleaner selama 3 menit. Lalu keringkan dengan hair dryer',
+  'Menimbang massa sampel dengan neraca Ohauss dan mencatatnya sebagai data massa sampel setelah plating',
+  'Mengukur resistivitas lapisan dengan Four Point Probe (FPP)',
 ];
