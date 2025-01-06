@@ -216,7 +216,7 @@ class HomePage extends StatelessWidget {
           const SizedBox(height: 12),
           UnconstrainedBox(
             child: PrimaryButton(
-              onPressed: () {},
+              onPressed: () => Navigator.pushNamed(context, profileRoute),
               text: 'Lihat Profil',
             ),
           )

@@ -9,6 +9,7 @@ const characterizationUrl = '${stepsUrl}characterization/';
 const homeRoute = '/';
 const experimentItemsRoute = '${homeRoute}experiment-items';
 const experimentStepsRoute = '${homeRoute}experiment-steps';
+const profileRoute = '${homeRoute}me';
 
 class Item {
   final String title;
