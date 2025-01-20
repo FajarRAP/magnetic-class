@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
+import 'helpers.dart';
+import 'models.dart';
 import 'pages/experiment_steps_page.dart';
 import 'pages/home_page.dart';
 import 'pages/items_page.dart';
+import 'pages/materials_page.dart';
 import 'pages/profile_page.dart';
 
-MaterialPageRoute toRoute(Widget page) =>
-    MaterialPageRoute(builder: (context) => page);
 Route<dynamic>? onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
     case homeRoute:
       return toRoute(const HomePage());
+    case materialsRoute:
+      return toRoute(const MaterialsPage());
     case experimentItemsRoute:
       final args = settings.arguments as Map<String, dynamic>;
       final title = args['title'] as String;
