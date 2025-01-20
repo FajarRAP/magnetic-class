@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:magnetic_class/constants.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -13,7 +14,22 @@ class ProfilePage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          const CircleAvatar(radius: 80),
+          
+          UnconstrainedBox(
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Colors.red,
+                image: DecorationImage(
+                  alignment: Alignment(0, -.5),
+                  image: AssetImage('${url}profile.jpg'),
+                  fit: BoxFit.cover,
+                ),
+                shape: BoxShape.circle,
+              ),
+              width: 120,
+              height: 120,
+            ),
+          ),
           const SizedBox(height: 16),
           Text(
             'Selly Violita Septiningrum',
