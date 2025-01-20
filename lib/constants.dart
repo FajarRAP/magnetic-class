@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+
+import 'models.dart';
+
 const url = 'assets/images/';
 const ingredientsUrl = '${url}ingredients/';
 const toolsUrl = '${url}tools/';
@@ -5,49 +9,21 @@ const stepsUrl = '${url}steps/';
 const substrateUrl = '${stepsUrl}substrate/';
 const electroPlatingUrl = '${stepsUrl}electroplating/';
 const characterizationUrl = '${stepsUrl}characterization/';
+const materialsUrl = '${url}materials/';
 
 const homeRoute = '/';
+const materialsRoute = '${homeRoute}materials';
 const experimentItemsRoute = '${homeRoute}experiment-items';
 const experimentStepsRoute = '${homeRoute}experiment-steps';
 const profileRoute = '${homeRoute}me';
 
-class Item {
-  final String title;
-  final String imageUrl;
-  final String description;
-
-  const Item({
-    required this.title,
-    required this.imageUrl,
-    required this.description,
-  });
-}
-
-class Tool extends Item {
-  const Tool({
-    required super.title,
-    required super.imageUrl,
-    required super.description,
-  });
-}
-
-class Ingredient extends Item {
-  const Ingredient({
-    required super.title,
-    required super.imageUrl,
-    required super.description,
-  });
-}
-
-class StepParams {
-  const StepParams({
-    required this.title,
-    required this.imageUrl,
-  });
-
-  final String title;
-  final String imageUrl;
-}
+const hyperlinkStyle = TextStyle(
+  color: Colors.red,
+  decoration: TextDecoration.underline,
+  decorationColor: Colors.red,
+  fontSize: 14,
+  fontWeight: FontWeight.w500,
+);
 
 const ingredients = <Ingredient>[
   Ingredient(
