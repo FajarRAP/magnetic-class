@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:magnetic_class/widgets/reversed_horizontal_image_and_title.dart';
 
-import '../constants.dart';
 import '../helpers.dart';
+import '../models.dart';
 import '../widgets/horizontal_image_and_title.dart';
+import '../widgets/reversed_horizontal_image_and_title.dart';
 
 class ItemsPage extends StatelessWidget {
   const ItemsPage({
