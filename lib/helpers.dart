@@ -1,4 +1,6 @@
-import 'package:magnetic_class/constants.dart';
+import 'package:flutter/material.dart';
+
+import 'models.dart';
 
 String getImageItemPath(Item item) {
   String match(Match? match) => '-';
@@ -8,3 +10,6 @@ String getImageItemPath(Item item) {
 
   return '$url$slug.png';
 }
+
+MaterialPageRoute toRoute(Widget page) =>
+    MaterialPageRoute(builder: (context) => page);
