@@ -20,26 +20,28 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           Text(
-            'Nama Materi',
+            'Magnet',
             style: textTheme.titleSmall,
           ),
           const SizedBox(height: 12),
           Text(
-            'Deskripsi singkat tentang apa yang akan di pelajari',
+            'Anda akan mempelajari tentang magnet',
             style: textTheme.bodySmall,
           ),
           const SizedBox(height: 12),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              color: Colors.grey.shade400,
+              image: const DecorationImage(
+                image: AssetImage('assets/images/materials/magnet.png'),
+              ),
             ),
             height: 165,
             width: double.infinity,
           ),
           const SizedBox(height: 12),
           Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.',
+            'Magnet adalah suatu benda yang mampu menarik benda lain di sekitarnya yang memiliki sifat khusus ...',
             style: textTheme.bodySmall,
           ),
           const SizedBox(height: 12),
@@ -47,7 +49,7 @@ class HomePage extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: UnconstrainedBox(
               child: PrimaryButton(
-                onPressed: () {},
+                onPressed: () => Navigator.pushNamed(context, materialsRoute),
                 text: 'Selengkapnya',
               ),
             ),
@@ -212,7 +214,21 @@ class HomePage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 12),
-          const CircleAvatar(radius: 48),
+          UnconstrainedBox(
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Colors.red,
+                image: DecorationImage(
+                  alignment: Alignment(0, -.5),
+                  image: AssetImage('${url}profile.jpg'),
+                  fit: BoxFit.cover,
+                ),
+                shape: BoxShape.circle,
+              ),
+              width: 120,
+              height: 120,
+            ),
+          ),
           const SizedBox(height: 12),
           UnconstrainedBox(
             child: PrimaryButton(
