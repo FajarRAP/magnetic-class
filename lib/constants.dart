@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'models.dart';
 
 const url = 'assets/images/';
+const urlVideo = 'assets/video/';
 const ingredientsUrl = '${url}ingredients/';
 const toolsUrl = '${url}tools/';
 const stepsUrl = '${url}steps/';
@@ -284,7 +285,7 @@ const tools = <Tool>[
     description: 'Pengubah data analog ke digital',
   ),
   Tool(
-    title: r'Lapisan tipis Cu NiFe',
+    title: 'Lapisan tipis Cu NiFe',
     imageUrl: toolsUrl,
     description: 'Sampel yang akan diuji',
   ),

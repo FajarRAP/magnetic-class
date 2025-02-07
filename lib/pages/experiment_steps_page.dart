@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 import '../widgets/experiment_steps_item.dart';
-import '../widgets/video_steps.dart';
+import '../widgets/video_step.dart';
 
 class ExperimentStepsPage extends StatelessWidget {
   const ExperimentStepsPage({super.key});
@@ -96,7 +96,7 @@ class ExperimentStepsPage extends StatelessWidget {
                 ),
                 const Padding(
                   padding: EdgeInsets.all(12),
-                  child: VideoSteps(),
+                  child: VideoStep(),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12),

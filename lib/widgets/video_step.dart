@@ -2,20 +2,22 @@ import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class VideoSteps extends StatefulWidget {
-  const VideoSteps({super.key});
+import '../constants.dart';
+
+class VideoStep extends StatefulWidget {
+  const VideoStep({super.key});
 
   @override
-  State<VideoSteps> createState() => VideoStepsState();
+  State<VideoStep> createState() => VideoStepState();
 }
 
-class VideoStepsState extends State<VideoSteps> {
+class VideoStepState extends State<VideoStep> {
   late VideoPlayerController videoPlayerController;
   late ChewieController chewieController;
 
   @override
   void initState() {
-    videoPlayerController = VideoPlayerController.asset('assets/converted.mp4')
+    videoPlayerController = VideoPlayerController.asset(urlVideo)
       ..initialize().then((_) => setState(() => chewieController =
           ChewieController(
               autoPlay: false,
