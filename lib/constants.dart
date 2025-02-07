@@ -261,7 +261,7 @@ const tools = <Tool>[
   Tool(
     title: 'Four Point Probe (FPP)',
     imageUrl: toolsUrl,
-    description: 'Mengukur resistivitas lapisan Cu/NiFe',
+    description: 'Mengukur resistivitas lapisan Cu NiFe',
   ),
   Tool(
     title: 'Nitrogen cair',
@@ -284,7 +284,7 @@ const tools = <Tool>[
     description: 'Pengubah data analog ke digital',
   ),
   Tool(
-    title: 'Lapisan tipis Cu/NiFe',
+    title: r'Lapisan tipis Cu NiFe',
     imageUrl: toolsUrl,
     description: 'Sampel yang akan diuji',
   ),
