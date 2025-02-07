@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'models.dart';
 
 const url = 'assets/images/';
-const urlVideo = 'assets/video/';
+const urlVideo = 'assets/video.mp4';
 const ingredientsUrl = '${url}ingredients/';
 const toolsUrl = '${url}tools/';
 const stepsUrl = '${url}steps/';
