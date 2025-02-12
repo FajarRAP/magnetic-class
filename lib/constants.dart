@@ -12,6 +12,7 @@ const electroPlatingUrl = '${stepsUrl}electroplating/';
 const characterizationUrl = '${stepsUrl}characterization/';
 const materialsUrl = '${url}materials/';
 
+const splashRoute = '/splash';
 const homeRoute = '/';
 const materialsRoute = '${homeRoute}materials';
 const experimentItemsRoute = '${homeRoute}experiment-items';
@@ -51,6 +52,11 @@ const ingredients = <Ingredient>[
     title: 'Stiker pola liku-liku',
     imageUrl: ingredientsUrl,
     description: 'Membuat pola pada pelat tembaga',
+  ),
+  Ingredient(
+    title: 'Tembaga',
+    imageUrl: ingredientsUrl,
+    description: 'Sebagai substrat',
   ),
 ];
 
@@ -283,11 +289,6 @@ const tools = <Tool>[
     title: 'Transduser',
     imageUrl: toolsUrl,
     description: 'Pengubah data analog ke digital',
-  ),
-  Tool(
-    title: 'Lapisan tipis Cu NiFe',
-    imageUrl: toolsUrl,
-    description: 'Sampel yang akan diuji',
   ),
 ];
 
