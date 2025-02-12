@@ -8,7 +8,7 @@ String getImageItemPath(Item item) {
   final loweredTitle = item.title.toLowerCase();
   final slug = loweredTitle.splitMapJoin(' ', onMatch: match);
 
-  return '$url$slug.png';
+  return '$url$slug.jpg';
 }
 
 MaterialPageRoute toRoute(Widget page) =>
