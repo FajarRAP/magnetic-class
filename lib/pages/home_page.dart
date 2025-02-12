@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 import '../helpers.dart';
-import '../widgets/primary_button.dart';
+import '../widgets/outline_primary_button.dart';
 import '../widgets/vertical_image_and_title.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,18 +15,19 @@ class HomePage extends StatelessWidget {
     final colorScheme = theme.colorScheme;
 
     return Scaffold(
+      backgroundColor: colorScheme.primary,
       appBar: AppBar(title: const Text('Magnetic Class')),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           Text(
             'Magnet',
-            style: textTheme.titleSmall,
+            style: textTheme.titleSmall?.copyWith(color: colorScheme.onPrimary),
           ),
           const SizedBox(height: 12),
           Text(
             'Anda akan mempelajari tentang magnet',
-            style: textTheme.bodySmall,
+            style: textTheme.bodySmall?.copyWith(color: colorScheme.onPrimary),
           ),
           const SizedBox(height: 12),
           Container(
@@ -42,13 +43,13 @@ class HomePage extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             'Magnet adalah suatu benda yang mampu menarik benda lain di sekitarnya yang memiliki sifat khusus ...',
-            style: textTheme.bodySmall,
+            style: textTheme.bodySmall?.copyWith(color: colorScheme.onPrimary),
           ),
           const SizedBox(height: 12),
           Align(
             alignment: Alignment.centerLeft,
             child: UnconstrainedBox(
-              child: PrimaryButton(
+              child: OutlinePrimaryButton(
                 onPressed: () => Navigator.pushNamed(context, materialsRoute),
                 text: 'Selengkapnya',
               ),
@@ -58,7 +59,7 @@ class HomePage extends StatelessWidget {
           // Experiment Tools
           Text(
             'Alat Eksperimen',
-            style: textTheme.titleSmall,
+            style: textTheme.titleSmall?.copyWith(color: colorScheme.onPrimary),
           ),
           const SizedBox(height: 12),
           GridView.count(
@@ -79,7 +80,7 @@ class HomePage extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: UnconstrainedBox(
-              child: PrimaryButton(
+              child: OutlinePrimaryButton(
                 onPressed: () {
                   final args = <String, dynamic>{
                     'title': 'Alat Eksperimen',
@@ -96,7 +97,7 @@ class HomePage extends StatelessWidget {
           // Experiment Ingredients
           Text(
             'Bahan Eksperimen',
-            style: textTheme.titleSmall,
+            style: textTheme.titleSmall?.copyWith(color: colorScheme.onPrimary),
           ),
           const SizedBox(height: 12),
           GridView.count(
@@ -106,7 +107,7 @@ class HomePage extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             children: List.generate(
-              5,
+              6,
               (index) => VerticalImageAndTitle(
                 title: ingredients[index].title,
                 imageUrl: getImageItemPath(ingredients[index]),
@@ -117,7 +118,7 @@ class HomePage extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: UnconstrainedBox(
-              child: PrimaryButton(
+              child: OutlinePrimaryButton(
                 onPressed: () {
                   final args = {
                     'title': 'Bahan Eksperimen',
@@ -134,7 +135,7 @@ class HomePage extends StatelessWidget {
           // Experiment Steps
           Text(
             'Langkah Eksperimen',
-            style: textTheme.titleSmall,
+            style: textTheme.titleSmall?.copyWith(color: colorScheme.onPrimary),
           ),
           const SizedBox(height: 12),
           SizedBox(
@@ -199,7 +200,7 @@ class HomePage extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: UnconstrainedBox(
-              child: PrimaryButton(
+              child: OutlinePrimaryButton(
                 onPressed: () =>
                     Navigator.pushNamed(context, experimentStepsRoute),
                 text: 'Selengkapnya',
@@ -210,7 +211,7 @@ class HomePage extends StatelessWidget {
           // Developer Profile
           Text(
             'Profile Pengembang',
-            style: textTheme.titleSmall,
+            style: textTheme.titleSmall?.copyWith(color: colorScheme.onPrimary),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 12),
@@ -231,7 +232,7 @@ class HomePage extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           UnconstrainedBox(
-            child: PrimaryButton(
+            child: OutlinePrimaryButton(
               onPressed: () => Navigator.pushNamed(context, profileRoute),
               text: 'Lihat Profil',
             ),

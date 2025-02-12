@@ -16,6 +16,7 @@ class ReversedHorizontalImageAndTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
+    final colorScheme = theme.colorScheme;
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,12 +28,14 @@ class ReversedHorizontalImageAndTitle extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: textTheme.titleSmall,
+                style: textTheme.titleSmall
+                    ?.copyWith(color: colorScheme.onPrimary),
               ),
               const SizedBox(height: 12),
               Text(
                 description,
-                style: textTheme.bodySmall,
+                style:
+                    textTheme.bodySmall?.copyWith(color: colorScheme.onPrimary),
                 textAlign: TextAlign.end,
               ),
             ],

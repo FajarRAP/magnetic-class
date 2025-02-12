@@ -12,7 +12,9 @@ class VerticalImageAndTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+    final colorScheme = theme.colorScheme;
 
     return Column(
       children: [
@@ -31,7 +33,7 @@ class VerticalImageAndTitle extends StatelessWidget {
         const SizedBox(height: 6),
         Text(
           title,
-          style: textTheme.labelSmall,
+          style: textTheme.labelSmall?.copyWith(color: colorScheme.onPrimary),
           textAlign: TextAlign.center,
         ),
       ],

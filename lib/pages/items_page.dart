@@ -17,8 +17,13 @@ class ItemsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Scaffold(
       appBar: AppBar(title: Text(title)),
+      backgroundColor: colorScheme.primary,
+      
       body: ListView.separated(
         itemBuilder: (context, index) => index.isEven
             ? HorizontalImageAndTitle(
