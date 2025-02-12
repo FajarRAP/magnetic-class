@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:magnetic_class/widgets/video_step.dart';
 
 import '../constants.dart';
 import '../widgets/experiment_steps_item.dart';
-import '../widgets/video_step.dart';
 
 class ExperimentStepsPage extends StatelessWidget {
   const ExperimentStepsPage({super.key});
@@ -15,13 +15,14 @@ class ExperimentStepsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: const Text('Langkah Eksperimen')),
+      backgroundColor: colorScheme.primary,
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           const SizedBox(height: 16),
           Text(
             'Langkah Penyiapan Substrat',
-            style: textTheme.titleSmall,
+            style: textTheme.titleSmall?.copyWith(color: colorScheme.onPrimary),
           ),
           const SizedBox(height: 12),
           ListView.separated(
@@ -38,7 +39,7 @@ class ExperimentStepsPage extends StatelessWidget {
           const SizedBox(height: 50),
           Text(
             'Langkah Elektroplating',
-            style: textTheme.titleSmall,
+            style: textTheme.titleSmall?.copyWith(color: colorScheme.onPrimary),
           ),
           const SizedBox(height: 12),
           ListView.separated(
@@ -55,7 +56,7 @@ class ExperimentStepsPage extends StatelessWidget {
           const SizedBox(height: 50),
           Text(
             'Langkah Karakterisasi',
-            style: textTheme.titleSmall,
+            style: textTheme.titleSmall?.copyWith(color: colorScheme.onPrimary),
           ),
           const SizedBox(height: 12),
           const ExperimentStepsItem(
@@ -108,6 +109,19 @@ class ExperimentStepsPage extends StatelessWidget {
                 const SizedBox(height: 12),
               ],
             ),
+          ),
+          const SizedBox(height: 50),
+          Text(
+            'Hasil Eksperimen',
+            style: textTheme.titleSmall?.copyWith(color: colorScheme.onPrimary),
+          ),
+          const SizedBox(height: 12),
+          const ExperimentStepsItem(
+            height: 400,
+            title: 'Lapisan Cu/NiFe',
+            imageUrl: 'assets/images/tools/lapisan-tipis-cu-nife.jpg',
+            description:
+                'Hasil eksperimen pembuatan sensor suhu pada lapisan magnetik Cu/NiFe berbantuan medan magnet sejajar',
           ),
         ],
       ),
