@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateRoute: onGenerateRoute,
-      initialRoute: homeRoute,
+      initialRoute: splashRoute,
       theme: theme,
       title: 'Magnetic Class',
     );
