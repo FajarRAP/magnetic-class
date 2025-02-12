@@ -6,11 +6,13 @@ class ExperimentStepsItem extends StatelessWidget {
     required this.title,
     required this.imageUrl,
     required this.description,
+    this.height,
   });
 
   final String title;
   final String imageUrl;
   final String description;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +60,7 @@ class ExperimentStepsItem extends StatelessWidget {
               ),
             ),
             margin: const EdgeInsets.symmetric(horizontal: 16),
-            height: 150,
+            height: height ?? 150,
             width: double.infinity,
           ),
           const SizedBox(height: 16),
