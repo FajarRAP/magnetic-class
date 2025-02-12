@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:magnetic_class/pages/splash_screen.dart';
 
 import 'constants.dart';
 import 'helpers.dart';
@@ -11,6 +12,8 @@ import 'pages/profile_page.dart';
 
 Route<dynamic>? onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
+    case splashRoute:
+      return toRoute(const SplashScreen());
     case homeRoute:
       return toRoute(const HomePage());
     case materialsRoute:
